@@ -1,0 +1,62 @@
+package com.example.brianthoms.criminalintent;
+
+import java.util.Date;
+import java.util.UUID;
+
+/**
+ * Created by brianthoms on 2/20/2018.
+ */
+
+public class Crime {
+
+    private UUID mId;
+    private String mTitle;
+    private Date mDate;
+    private boolean mSolved, mSerious;
+
+    public Crime() {
+        mId = UUID.randomUUID();
+        mDate = new Date();
+    }
+
+    public UUID getId() {
+        return mId;
+    }
+
+    public String getTitle() {
+        return mTitle;
+    }
+
+    public void setTitle(String title) {
+        mTitle = title;
+    }
+
+    public Date getDate() {
+        return mDate;
+    }
+
+    public void setDate(Date date) {
+        mDate = date;
+    }
+
+    public boolean isSolved() {
+        return mSolved;
+    }
+
+    public void setSolved(boolean solved) {
+        mSolved = solved;
+    }
+
+    /*
+        Made a boolean function that will return if the crime is serious or not
+     */
+
+    public boolean isSerious()
+    {
+        return mSerious;
+    }
+    public void setSerious(boolean seriousCrime)
+    {
+        mSerious = seriousCrime;
+    }
+}
