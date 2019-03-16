@@ -1,5 +1,10 @@
+/*
+Gabriel Espinosa
+ */
+
 package com.example.mathapp;
 
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +24,7 @@ public class MathQuizActivity extends AppCompatActivity {
     private RadioGroup answers;
     private RadioButton answer1,answer2,answer3;
     private int checkAnswer = 0;
+    int counter = 0;
     final String TAG = "MathQuizActivity";
 
 
@@ -81,6 +87,28 @@ public class MathQuizActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        counter++;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        outState.putInt("counter",counter);
+        Log.d("VIVZ", counter + " was saved");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        counter = savedInstanceState.getInt("counter");
+        Log.d("VIVZ", counter + " was restored");
+
+    }
+
     private void theResult(boolean anser)
     {
         if(anser)
@@ -97,8 +125,6 @@ public class MathQuizActivity extends AppCompatActivity {
         answer2.setText(mathQuestions.getAnswerArr().get(1)+" ");
         answer3.setText(mathQuestions.getAnswerArr().get(2)+" ");
     }
-
-
 
 
 }

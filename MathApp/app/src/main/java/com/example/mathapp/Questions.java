@@ -1,3 +1,7 @@
+/*
+Gabriel Espinosa
+ */
+
 package com.example.mathapp;
 
 import java.util.ArrayList;
@@ -36,7 +40,7 @@ public class Questions {
         answerArr.add(incorrectAns1);
         answerArr.add(incorrectAns2);
         Collections.sort(answerArr);
-        return leftAdder + " + " + rightAdder + " = ?";
+        return leftAdder + " + " + rightAdder + " = ";
 
     }
     boolean isCorrect(int var)
