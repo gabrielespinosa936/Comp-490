@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MathApp</string>
+    <string name="math_text">Math</string>
+    <string name="calc_text">Calculator</string>
+    <string name="tip_text">Tip</string>
+    <string name="math_quiz_text">Math Quiz</string>
+    <string name="mult_sign">X</string>
+    <string name="submit_string">Submit</string>
+</resources>
